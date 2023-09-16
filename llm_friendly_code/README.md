@@ -1,0 +1,1 @@
+# Writing LLM friendly code

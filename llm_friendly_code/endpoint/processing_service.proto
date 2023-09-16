@@ -1,0 +1,30 @@
+// The processing service definition.
+
+// protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative grpc/processing_service.proto
+
+syntax = "proto3";
+
+option go_package = "endpoint" ;
+
+service ProcessingService {
+  // Sends a greeting
+  rpc Process (ProcessingRequest) returns (ProcessingReply) {}
+  rpc Retrieve (RetrievingRequest) returns (RetrievingReply) {}
+
+}
+
+message ProcessingRequest {
+  string data = 1;
+}
+
+message ProcessingReply {
+  string token = 1;
+}
+
+message RetrievingRequest {
+  string token = 1;
+}
+
+message RetrievingReply {
+  string data = 1;
+}
